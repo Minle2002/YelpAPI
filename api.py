@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
+import os
 
 app = Flask(__name__)
+CORS(app)
 
 YELP_API_KEY = '-6OSNIwtvbRPl5QHRpaGzB2KFb3NFcc4Qby4vFVyvHKS4eX3KSEx-QxWBVBzBTy2fiKHmgdTKb_Ybi3huhBB97lYuFJegfeAANp7aXvI2QGMuRKHPF8MH36RElcMZnYx'
 
@@ -41,5 +44,6 @@ def search():
     except requests.RequestException as e:
         return jsonify({'error': f'Failed to retrieve data from Yelp API: {str(e)}'}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
