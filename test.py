@@ -1,9 +1,10 @@
 import requests
 
-url = 'https://yelpapi-ahzs.onrender.com/search'
+url = 'http://127.0.0.1:5000/search'
 
 data = {
-    "location": "E. Burnside Ave"
+    "location": "New York",
+    "doctor_type": "dermatologist"
 }
 
 response = requests.post(url, json=data)

@@ -12,10 +12,11 @@ YELP_API_KEY = '-6OSNIwtvbRPl5QHRpaGzB2KFb3NFcc4Qby4vFVyvHKS4eX3KSEx-QxWBVBzBTy2
 def search():
     data = request.get_json()
 
+    doctor_type = data.get('doctor_type', 'doctors')
     location = data['location']
     
     headers = {'Authorization': f'Bearer {YELP_API_KEY}'}
-    params = {'term': 'doctors',
+    params = {'term': doctor_type,
               'location': location,
               'limit': 50,
               'sort_by': 'rating'
