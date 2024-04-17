@@ -1,13 +1,16 @@
 import requests
 
-url = 'http://127.0.0.1:5000/search'
+url = 'https://api.fda.gov/'
+
+endpoint = 'drug/event.json'
 
 data = {
-    "limit": 1,
-    "doctor_type": "dermatologist",
-    "location": "New York"
+    "search": "Ibuprofen"
 }
 
-response = requests.post(url, json=data)
+response = requests.post(url + endpoint, json=data)
 
-print(response.json())
+if response.status_code == 200:
+    print(response.json())
+else:
+    print('Error:', response.status_code)
