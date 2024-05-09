@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-YELP_API_KEY = 'BtvMttPfLSf0waVDgDNGghl9zNrjkyxjwd4OKvwCbKknVdUmgSdxa7H4-9YZ-6ibCfgKp3wwXQYGsHtWxaSZg7ZR3oDn7LszsKOkuaYt7HSViOhVKeV8yqF_UVQ9ZnYx'
+YELP_API_KEY = 'l-e0FhCCC_B_pTeqqSyDhQEYTUbV9FDml3HU-djl9XgBn2-cGiV9msJiCNiMhzN27xocZY0U7FPrJ9AljKSlMp9mI77BYHIc3wpNav--0blwXhHwoAz6Zu6-eFY9ZnYx'
 
 @app.route('/search', methods=['POST'])
 def search():
